@@ -4,38 +4,49 @@
 <head>
     <title>Batman</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <h1>Batman</h1>
-        <img src="images/batman.jpg" alt="">
-        <p>“Él puede tomar la decisión que nadie más puede, la decisión correcta”</p>
+    <header class="header">
+        <h1 class="title">Batman</h1>
+        <!-- <img src="images/batman.jpg" class="title-img"> -->
+        <div class="title-img"></div>
+        <p class="title-cite">“Él puede tomar la decisión que nadie más puede, la decisión correcta”</p>
     </header>
-    <nav>
-        <ul>
-            <li>
-                <a href="#">Inicio</a>
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li class="navbar-item active">
+                <a href="#" class="navbar-link">Inicio</a>
             </li>
-            <li>
-                <a href="#quien-soy">Quién soy</a>
+            <li class="navbar-item">
+                <a href="#quien-soy" class="navbar-link">Quién soy</a>
             </li>
-            <li>
-                <a href="#equipo">Equipo</a>
+            <li class="navbar-item">
+                <a href="#equipo" class="navbar-link">Equipo</a>
             </li>
-            <li>
-                <a href="#transporte">Transporte</a>
+            <li class="navbar-item">
+                <a href="#transporte" class="navbar-link">Transporte</a>
             </li>
-            <li>
-                <a href="contact.html">Contacto</a>
+            <li class="navbar-item">
+                <a href="contact.html" class="navbar-link">Contacto</a>
             </li>
-            <li>
-                <a href="tasks.html">Tareas</a>
+            <li class="navbar-item">
+                <a href="tasks.html" class="navbar-link">Tareas</a>
             </li>
         </ul>
     </nav>
     <main>
-        <section id="quien-soy">
+        <section id="quien-soy" class="about-me clearfix">
+        	<div class="batman-video">
+        		VIDEO
+        	</div>
+        	<div class="batman-info">
+				<h2>Quien soy</h2>
+				<strong>Batman:</strong>
+				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita rem explicabo nihil, harum sint sunt aliquam, nemo iste impedit eos voluptatum sed. Excepturi eaque quod ullam culpa, praesentium beatae distinctio.</span>
+        	</div>
         </section>
         <section id="equipo">
             <article></article>
