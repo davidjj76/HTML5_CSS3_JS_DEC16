@@ -4,6 +4,7 @@
 	margin: 0 auto;	
 }
 
+/*  Es conveniente separar css de estilo de css de layout */
 /* Grid de 12 columnas (100/12) */
 .row:before, 
 .row:after {
@@ -13,73 +14,73 @@
 }
 
 .col-1 {
-	width: 8.33%;
+	width: calc(100% / 12);
 	float: left;
 	display: inline-block;
 }
 
 .col-2 {
-	width: 16.67%;
+	width: calc(calc(100% / 12) * 2);
 	float: left;
 	display: inline-block;
 }
 
 .col-3 {
-	width: 25%;
+	width: calc(calc(100% / 12) * 3);
 	float: left;
 	display: inline-block;
 }
 
 .col-4 {
-	width: 33.33%;
+	width: calc(calc(100% / 12) * 4);
 	float: left;
 	display: inline-block;
 }
 
 .col-5 {
-	width: 41.67%;
+	width: calc(calc(100% / 12) * 5);
 	float: left;
 	display: inline-block;
 }
 
 .col-6 {
-	width: 50%;
+	width: calc(calc(100% / 12) * 6);
 	float: left;
 	display: inline-block;
 }
 
 .col-7 {
-	width: 58.33%;
+	width: calc(calc(100% / 12) * 7);
 	float: left;
 	display: inline-block;
 }
 
 .col-8 {
-	width: 66.67%;
+	width: calc(calc(100% / 12) * 8);
 	float: left;
 	display: inline-block;
 }
 
 .col-9 {
-	width: 75%;
+	width: calc(calc(100% / 12) * 9);
 	float: left;
 	display: inline-block;
 }
 
 .col-10 {
-	width: 83.33%;
+	width: calc(calc(100% / 12) * 10);
 	float: left;
 	display: inline-block;
 }
 
 .col-11 {
-	width: 91.67%;
+	width: calc(calc(100% / 12) * 11);
 	float: left;
 	display: inline-block;
 }
 
 .col-12 {
-	width: 100%;
+	width: calc(calc(100% / 12) * 12);
 	float: left;
 	display: inline-block;
 }
