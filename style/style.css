@@ -59,7 +59,9 @@ body {
     font-family: batman;
     text-align: center;
     font-size: 100px;
-
+    visibility: hidden;
+	animation: titleAnimation 2s forwards;
+	animation-delay: 1s;
 }
 
 .header > .title-img {
@@ -83,6 +85,9 @@ body {
     text-align: center;
     font-family: batman;
     font-size: 28px;
+    opacity: 0;
+    animation: subtitleAnimation 3s forwards;
+    animation-delay: 8s;
 }
 
 .about-me > .batman-video {
@@ -169,6 +174,33 @@ body {
 
 .flip:hover .back {
 	transform: rotateY(0);
+}
+
+@keyframes titleAnimation {
+    0% {
+        font-size: 200px;
+    }
+    50% {
+        font-size: 180px;
+    }
+    100% {
+        font-size: 100px;
+        visibility: visible;
+    }
+
+}
+
+@keyframes subtitleAnimation {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+
 }
 
 .clearfix:after {
