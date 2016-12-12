@@ -19,6 +19,7 @@ body {
 	background-color: #f7f7f7;
 	position: fixed;
 	top: 0;
+	z-index: 1000;
 }
 
 .navbar > .navbar-list {
@@ -71,7 +72,7 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center center;
-    transition: background-size 1s;
+    transition: all 0.5s;
 }
 
 .header > .title-img:hover { 
@@ -209,4 +210,8 @@ body {
     display: block;
     height: 0;
     clear: both;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

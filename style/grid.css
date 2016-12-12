@@ -2,6 +2,7 @@
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;	
+	display: block;
 }
 
 /*  Es conveniente separar css de estilo de css de layout */
