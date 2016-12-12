@@ -6,7 +6,7 @@ for (var i = 0; i < navbarItems.length; i++) {
 		this.classList.add('active');
 
 		var sectionToGo = this.getElementsByTagName("a")[0].href.split("#");
-		if (sectionToGo.length) {
+		if (sectionToGo.length > 1) {
 			event.preventDefault();
 			var goTo = sectionToGo[sectionToGo.length - 1];
 			getElementByIdAndScroll(goTo);
