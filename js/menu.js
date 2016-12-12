@@ -43,3 +43,32 @@ function deleteAvctiveClass() {
 	document.getElementsByClassName('navbar-item active')[0].classList.remove("active");
 }
 
+var cumulativeOffset = function(element) {
+	var top = 0;
+	do {
+		top += element.offsetTop || 0;
+		element = element.offsetParent;
+	} while(element)
+	return top;
+};
+
+// Restamos a los offsets el alto de la barra de navegacion, ya que está posicionada fija 
+var offsetQuienSoy = cumulativeOffset(document.getElementById("quien-soy")) - 59;
+var offsetEquipo = cumulativeOffset(document.getElementById("equipo")) - 59;
+var offsetTransporte = cumulativeOffset(document.getElementById("transporte")) - 59;
+
+window.addEventListener("scroll", changeMenuStyle);
+
+function changeMenuStyle(event) {
+	if (window.pageYOffset >= 0 && window.pageYOffset < offsetQuienSoy) {
+		deleteAvctiveClass();
+		document.querySelector("a[href='#']").parentNode.classList.add("active");
+	} else if (window.pageYOffset >= offsetQuienSoy && window.pageYOffset < offsetEquipo) {
+		deleteAvctiveClass();
+		document.querySelector("a[href$='quien-soy']").parentNode.classList.add("active");
+	} else if (window.pageYOffset >= offsetEquipo && window.pageYOffset < offsetTransporte) {
+		deleteAvctiveClass();
+		document.querySelector("a[href$='equipo']").parentNode.classList.add("active");
+	}
+
+}
