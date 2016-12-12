@@ -4,9 +4,14 @@
     -moz-box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
 body {
     margin: 0px;
     font-family: 'Roboto', sans-serif;
+    height: 100%;
 }
 
 @font-face {
@@ -90,6 +95,11 @@ body {
     opacity: 0;
     animation: subtitleAnimation 3s forwards;
     animation-delay: 8s;
+}
+
+.container {
+	min-height: 100%;
+	margin-bottom: -50px;
 }
 
 .about-me > .batman-video {
@@ -241,6 +251,10 @@ button {
 
 #too-many-enemies {
 	display: none;
+}
+
+#googleMap {
+	height: 400px;
 }
 
 ::-webkit-scrollbar {
