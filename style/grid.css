@@ -33,7 +33,9 @@
 }
 
 .col-4 {
-	width: calc(calc(100% / 12) * 4);
+	/* IE 11 no soporta calc(calc()) - calc anidado
+	/* width: calc(calc(100% / 12) * 4); */
+	width: 33.3%;
 	float: left;
 	display: inline-block;
 }

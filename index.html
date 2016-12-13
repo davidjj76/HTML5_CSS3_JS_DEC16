@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style/grid.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <script src="js/modernizr-custom.js"></script>
 </head>
 
 <body>
@@ -41,7 +42,9 @@
     <main class="container">
         <section id="quien-soy" class="about-me clearfix section-content">
             <div class="batman-video">
-                VIDEO
+                <video id="video-batman" width="550" height="300" controls>
+<!--                     <source src="video/batman-lego.mp4" type="video/mp4"> -->
+                </video>
             </div>
             <div class="batman-info">
                 <h2>Quien soy</h2>
@@ -152,11 +155,17 @@
             </div>
         </section>
     </main>
+    <!--     
+    <video id="video" width="600" height="400"></video>
+    <button id="snap">Snap photo</button>
+    <canvas id="canvas" width="600" height="400"></canvas>
+ -->
     <footer class="footer">
         David Jiménez &copy; 2016 KeepCoding.io
     </footer>
 </body>
 <script src="js/animationImgTitle.js"></script>
 <script src="js/menu.js"></script>
+<script src="js/full-screen.js"></script>
 
 </html>

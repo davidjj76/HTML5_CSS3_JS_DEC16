@@ -103,4 +103,10 @@ form.addEventListener("submit", function(event) {
         event.preventDefault();
         return false;
     }
+
+    // Para simular una notificacion
+    event.preventDefault();
+    setTimeout(function() {
+        sendNotification("Formulario recibido", "En breve tendrás respuesta");
+    });
 });

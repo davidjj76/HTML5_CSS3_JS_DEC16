@@ -1,6 +1,11 @@
 function getLocation(){
     if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, errorHandler);
+        var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+        navigator.geolocation.getCurrentPosition(showPosition, errorHandler, options);
     } else {
         alter("Geolocalizacion no soportada");
     }
@@ -8,25 +13,44 @@ function getLocation(){
 
 function showPosition(position) {
 
-	console.log(position);
+    // Con AJAX
+    var xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    console.log(xhr);
 
-    var myLatLng = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
+    // Peticion al API de Google 
+    var url = "";
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            console.log(xhr);
+            console.log("Respuesta servidor", JSON.Parse(xhr.responseText));
+        }
     };
+    xhr.send();
 
-    var mapProp = {
-        center: myLatLng,
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    // Método Google Maps
+    // var myLatLng = {
+    //     lat: position.coords.latitude,
+    //     lng: position.coords.longitude
+    // };
 
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Aqui estamos'
-    });
+    // var mapProp = {
+    //     center: myLatLng,
+    //     zoom: 15,
+    //     mapTypeId: google.maps.MapTypeId.ROADMAP
+    // };
+    // var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+    // var marker = new google.maps.Marker({
+    //     position: myLatLng,
+    //     map: map,
+    //     title: 'Aqui estamos'
+    // });
     
 }
 
@@ -45,6 +69,30 @@ function errorHandler(error) {
             alert("An unknown error occurred.");
             break;
     }
+}
+
+function showPosition(position) {
+
+    // Con AJAX
+    var xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    console.log(xhr);
+
+    // Peticion al API de Google 
+    var url = "https://jsonplaceholder.typicode.com/posts";
+    xhr.open("POST", url, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            console.log(xhr);
+            console.log("Respuesta servidor", JSON.Parse(xhr.responseText));
+        }
+    };
+    // En el parametro se envían los datos del POST
+    xhr.send();
 }
 
 getLocation();
