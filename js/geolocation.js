@@ -7,7 +7,7 @@ function getLocation(){
         };
         navigator.geolocation.getCurrentPosition(showPosition, errorHandler, options);
     } else {
-        alter("Geolocalizacion no soportada");
+        alert("Geolocalizacion no soportada");
     }
 }
 
@@ -20,15 +20,13 @@ function showPosition(position) {
     } else {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    console.log(xhr);
 
     // Peticion al API de Google 
-    var url = "";
+    var url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=true";
     xhr.open("GET", url, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
-            console.log(xhr);
-            console.log("Respuesta servidor", JSON.Parse(xhr.responseText));
+            console.log("Respuesta servidor", JSON.parse(xhr.responseText));
         }
     };
     xhr.send();
@@ -71,7 +69,7 @@ function errorHandler(error) {
     }
 }
 
-function showPosition(position) {
+function fakePost(position) {
 
     // Con AJAX
     var xhr;
@@ -80,19 +78,19 @@ function showPosition(position) {
     } else {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    console.log(xhr);
 
-    // Peticion al API de Google 
+    // Post al API de jsonplaceholder 
     var url = "https://jsonplaceholder.typicode.com/posts";
     xhr.open("POST", url, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
             console.log(xhr);
-            console.log("Respuesta servidor", JSON.Parse(xhr.responseText));
+            console.log("Respuesta servidor", JSON.parse(xhr.responseText));
         }
     };
     // En el parametro se envían los datos del POST
-    xhr.send();
+    xhr.send({ text: "mypost" });
 }
 
-getLocation();
+fakePost();
+// getLocation();

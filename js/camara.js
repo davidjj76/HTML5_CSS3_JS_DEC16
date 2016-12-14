@@ -19,6 +19,7 @@ function initialiceCamera() {
 		context.drawImage(video, 0, 0, 600, 400);
 	});
 } 
+
 window.addEventListener("DOMContentLoaded", function(event) {
 	initialiceCamera()
 });
