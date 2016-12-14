@@ -89,7 +89,8 @@ function fakePost(position) {
         }
     };
     // En el parametro se envían los datos del POST
-    xhr.send({ text: "mypost" });
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    xhr.send("mypost=25&myage=40&color=red");
 }
 
 fakePost();
